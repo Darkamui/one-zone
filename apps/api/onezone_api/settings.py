@@ -88,10 +88,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Internationalization
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
-USE_I18N = True
-USE_TZ = True
+# LANGUAGE_CODE = 'en-us'
+# TIME_ZONE = 'UTC'
+# USE_I18N = True
+# USE_TZ = True
 
 # Static files
 STATIC_URL = 'static/'
@@ -170,4 +170,4 @@ if USE_S3:
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # Full-text search
-LANGUAGE_CODE = 'english'
+# LANGUAGE_CODE = 'english'

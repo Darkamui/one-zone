@@ -196,3 +196,22 @@ class PageActivity(models.Model):
         indexes = [
             models.Index(fields=['page', '-created_at']),
         ]
+
+class PageFavorite(models.Model):
+    """
+    User favorites for pages (Many-to-Many through table)
+    """
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    page = models.ForeignKey(Page, on_delete=models.CASCADE, related_name='favorites')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='favorite_pages')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = 'page_favorites'
+        unique_together = ['page', 'user']
+        indexes = [
+            models.Index(fields=['user', 'created_at']),
+        ]
+
+    def __str__(self):
+        return f"{self.user.email} - {self.page.name}"

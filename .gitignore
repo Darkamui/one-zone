@@ -101,3 +101,7 @@ Desktop.ini
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+
+# AI Helpers
+.claude 
+*.md
